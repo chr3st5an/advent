@@ -27,7 +27,9 @@ from typing import List
 
 def find_most_carrying() -> List[int]:
     with open("data/input-day-1.txt") as f:
-        return sorted(sum(map(int, elf.split("\n"))) for elf in f.read().split("\n\n"))
+        elves = f.read().split("\n\n")
+
+    return sorted(sum(map(int, elf.split("\n"))) for elf in elves)
 
 
 if __name__ == "__main__":
