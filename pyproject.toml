@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "advent"
+version = "0.1.0"
+description = ""
+authors = ["Christian <64144555+chr3st5an@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+isort = "^5.10.1"
+flake8 = "^6.0.0"
+
+[tool.black]
+max_line_length = 120
+skip-string-normalization = true
+
+[tool.isort]
+profile = "black"
+combine_star = true
+combine_as_imports = true
+from_first = true
+lines_after_imports = 2
+length_sort = true
+line_length = 120
+skip_gitignore = true
+use_parentheses = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
