@@ -22,13 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from functools import reduce
 from typing import List
+from functools import reduce
 
 
 def load_sample_data() -> List[str]:
     with open("data/input-day-3.txt") as f:
-        return f.read().split("\n")
+        return f.read().splitlines()
 
 
 def char_to_num(char: str) -> int:
