@@ -26,7 +26,7 @@ from typing import List
 from functools import reduce
 
 
-def load_sample_data() -> List[str]:
+def load_data() -> List[str]:
     with open("data/input-day-3.txt") as f:
         return f.read().splitlines()
 
@@ -38,7 +38,7 @@ def char_to_num(char: str) -> int:
 def sum_of_priorities() -> int:
     sum_ = 0
 
-    for rucksack in load_sample_data():
+    for rucksack in load_data():
         a, b = rucksack[:len(rucksack) // 2], rucksack[len(rucksack) // 2:]
         sum_ += char_to_num([*(set(a) & set(b))][0])
 
@@ -47,7 +47,7 @@ def sum_of_priorities() -> int:
 
 def three_elf_group() -> int:
     sum_ = 0
-    data = load_sample_data()
+    data = load_data()
 
     for i in range(3, len(data) + 1, 3):
         common = reduce(lambda x, y: set(x) & set(y), data[i - 3:i])

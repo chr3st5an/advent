@@ -31,7 +31,7 @@ import re
 #         ... second Elf                      from - to
 #         ... first Elf             from - to   |    |
 #                                     |    |    |    |
-def load_sample_data() -> List[Tuple[int, int, int, int]]:
+def load_data() -> List[Tuple[int, int, int, int]]:
     with open("data/input-day-4.txt") as f:
         data = re.findall(r"(\d+)-(\d+),(\d+)-(\d+)", f.read())
 
@@ -39,7 +39,7 @@ def load_sample_data() -> List[Tuple[int, int, int, int]]:
 
 
 def count_overlapping(where: Callable[..., bool], /) -> int:
-    return sum(where(*pair) for pair in load_sample_data())
+    return sum(where(*pair) for pair in load_data())
 
 
 def pairs_overlap(a: int, b: int, c: int, d: int) -> bool:

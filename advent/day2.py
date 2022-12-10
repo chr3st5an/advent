@@ -43,7 +43,7 @@ RULES: Dict[str, Tuple[str, str, str]] = {
 }
 
 
-def load_sample_data() -> List[Tuple[str, str]]:
+def load_data() -> List[Tuple[str, str]]:
     """Load the sample data
 
     Returns
@@ -60,14 +60,14 @@ def load_sample_data() -> List[Tuple[str, str]]:
 
 # Task 1
 def calculate_score() -> int:
-    return sum(3 * RULES[a].index(b) + SHAPES[b] for a, b in load_sample_data())
+    return sum(3 * RULES[a].index(b) + SHAPES[b] for a, b in load_data())
 
 
 # Task 2
 def calculate_score_2() -> int:
     return sum(
         3 * (idx := [*SHAPES].index(b)) + SHAPES[RULES[a][idx]]
-        for a, b in load_sample_data()
+        for a, b in load_data()
     )
 
 
